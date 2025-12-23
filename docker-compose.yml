@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_gw
+    environment:
+      POSTGRES_DB: GW
+      POSTGRES_USER: solid
+      POSTGRES_PASSWORD: GW_1964_lalelilolu
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_GW:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata_GW:
